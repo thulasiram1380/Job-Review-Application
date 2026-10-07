@@ -48,10 +48,10 @@ public class JobServiceImpl implements JobService {
     }
     public JobDTO convert(Job job){
 
-//        System.out.println("========== DEBUG ==========");
-//        System.out.println("Job ID      = " + job.getId());
-//        System.out.println("Company ID  = " + job.getCompanyId());
-//        System.out.println("===========================");
+        System.out.println("========== DEBUG ==========");
+        System.out.println("Job ID      = " + job.getId());
+        System.out.println("Company ID  = " + job.getCompanyId());
+        System.out.println("===========================");
 
 //        Company company = restTemplate.getForObject(
 //                "http://COMPANY:8081/companies/"+ job.getCompanyId()
@@ -104,6 +104,7 @@ public class JobServiceImpl implements JobService {
             job1.setMinSalary(job.getMinSalary());
             job1.setMaxSalary(job.getMaxSalary());
             job1.setLocation(job.getLocation());
+            job1.setCompanyId(job.getCompanyId());
             jobRepo.save(job1);
             return true;
         }

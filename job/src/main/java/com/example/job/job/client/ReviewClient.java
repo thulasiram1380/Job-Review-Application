@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(name="REVIEW")
+@FeignClient(name="review-service",
+        url = "${review-service.url}")
 public interface ReviewClient {
 
-    @GetMapping("/review")
+    @GetMapping("/reviews")
     List<Review> getReviews(@RequestParam Long companyId);
 }
